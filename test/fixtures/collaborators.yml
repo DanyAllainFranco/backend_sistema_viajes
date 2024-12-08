@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cola_nombre: MyString
+  cola_apelllido: MyString
+  cola_email: MyString
+
+two:
+  cola_nombre: MyString
+  cola_apelllido: MyString
+  cola_email: MyString

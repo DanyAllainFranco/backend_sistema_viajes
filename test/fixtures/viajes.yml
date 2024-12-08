@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sucu_id: 1
+  trans_id: 1
+  user_user_id: 1
+  viaj_fecha: 2024-12-02
+  total_km: 9.99
+  total_a_pagar: 9.99
+
+two:
+  sucu_id: 1
+  trans_id: 1
+  user_user_id: 1
+  viaj_fecha: 2024-12-02
+  total_km: 9.99
+  total_a_pagar: 9.99

@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  trans_nombre: MyString
+  trans_apellido: MyString
+  tarifa_por_km: 9.99
+
+two:
+  trans_nombre: MyString
+  trans_apellido: MyString
+  tarifa_por_km: 9.99

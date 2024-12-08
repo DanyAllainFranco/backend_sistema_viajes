@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: postgres
+  password: postgre2024
+  host: viajes-database.cfiyqkusmah4.us-east-2.rds.amazonaws.com
+  database: db_viajes
+  sslmode: require
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  <<: *default
