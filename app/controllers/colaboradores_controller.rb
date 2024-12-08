@@ -18,17 +18,14 @@ class ColaboradoresController < ApplicationController
 
       @colaborador = Collaborator.find(colaborador_id)
 
-      # Validaciones
       if distancia_km <= 0 || distancia_km > 50
         return render json: { error: "La distancia debe ser mayor a 0 y menor o igual a 50 km." }, status: :unprocessable_entity
       end
 
-      # Verificar si la sucursal ya está asignada al colaborador
       if @colaborador.tbcolaboradores_por_sucursales.exists?(sucu_id: sucursal_id)
         return render json: { error: "El colaborador ya tiene esta sucursal asignada." }, status: :unprocessable_entity
       end
 
-      # Asignar la sucursal al colaborador
       @colaborador.tbcolaboradores_por_sucursales.create!(sucu_id: sucursal_id, distancia_km: distancia_km)
 
       render json: { message: "Sucursal asignada correctamente" }, status: :ok
@@ -51,10 +48,8 @@ class ColaboradoresController < ApplicationController
       colaborador = find_colaborador
       sucursal = Sucursal.find(params[:sucu_id])
 
-      # Encuentra o crea la relación entre el colaborador y la sucursal
       colaborador_por_sucursal = TbcolaboradoresPorSucursales.find_or_initialize_by(cola_id: colaborador.id, sucu_id: sucursal.id)
 
-      # Actualiza la distancia_km en la relación
       colaborador_por_sucursal.distancia_km = params[:colaboradore][:distancia_km]
 
       if colaborador_por_sucursal.save

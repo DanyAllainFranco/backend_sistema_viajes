@@ -14,7 +14,6 @@ class SucursalesController < ApplicationController
       return
     end
 
-    # Llamar al procedimiento en PostgreSQL
     ActiveRecord::Base.connection.execute("SELECT asignar_sucursal_a_colaborador(#{colaborador_id}, #{sucursal_id}, #{distancia_km})")
 
     render json: { message: "Asignación realizada correctamente" }, status: :ok
@@ -26,7 +25,6 @@ class SucursalesController < ApplicationController
     cosu_id = params[:cosu_id]
     distancia_km = params[:distancia_km]
 
-    # Llamar al procedimiento en PostgreSQL
     ActiveRecord::Base.connection.execute("SELECT actualizar_sucursal_a_colaborador(#{cosu_id}, #{distancia_km})")
 
     render json: { message: "Asignación actualizada correctamente" }, status: :ok
@@ -37,7 +35,6 @@ class SucursalesController < ApplicationController
   def eliminar_sucursal_a_colaborador
     cosu_id = params[:cosu_id]
 
-    # Llamar al procedimiento en PostgreSQL
     ActiveRecord::Base.connection.execute("SELECT eliminar_sucursal_a_colaborador(#{cosu_id})")
 
     render json: { message: "Asignación eliminada correctamente" }, status: :ok
