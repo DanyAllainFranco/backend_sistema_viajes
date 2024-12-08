@@ -24,7 +24,7 @@ class ViajesController < ApplicationController
     render json: @viaje, status: :created
 
   else
-      puts @viaje.errors.full_messages  # Esto te permitirá ver los errores de validación
+      puts @viaje.errors.full_messages
       render json: { errors: @viaje.errors.full_messages }, status: :unprocessable_entity
   end
   end
